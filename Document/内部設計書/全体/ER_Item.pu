@@ -1,0 +1,76 @@
+@startuml tables
+package Item
+{
+    entity "Player"
+    {
+        //this is not Database
+        ---
+        ItemList [(アイテムid,所持数)]
+    }
+    entity "Item" 
+    {
+        +id [アイテムのid]
+        ---
+        -itemtype[アイテムの種類(Useable,Material,Important)]
+        -id [種類ごとのid]
+    }
+    entity "Useable"
+    {
+        +id [種類ごとのid]
+        ---
+        -itemtype[使用タイプ(Heal,Buff,Ability,Other)]
+        -id [使用タイプid]
+    }
+    entity "Heal"
+    {
+        +id [使用タイプid]
+        ---
+        name [アイテム名]
+        HealType[回復対象(HP,MP,"状態異常の種類")]
+        HealValue [回復量]
+    }
+    entity "Buff"
+    {
+        +id [使用タイプid]
+        ---
+        name [アイテム名]
+        BuffType[バフするステータス]
+        BuffValue [バフ量]
+        BuffTime [バフ時間]
+    }
+    entity "Ability"
+    {
+        +id [使用タイプid]
+        ---
+        name [アイテム名]
+    }
+    entity "Other"
+    {
+        +id [使用タイプid]
+        ---
+        name [アイテム名]
+        ItemObject [アイテムオブジェクトの実体]
+    }
+    entity "Material"
+    {
+        +id [種類ごとのid]
+        ---
+        name [アイテム名]
+    }
+    entity "Important"
+    {
+        +id [種類ごとのid]
+        ---
+        name [アイテム名]
+    }
+    Player ||--o{ Item
+    Item ||--o{ Useable
+    Useable ||--o{ Heal
+    Useable ||--o{ Buff
+    Useable ||--o{ Ability
+    Useable ||--o{ Other
+    Item ||--o{ Material
+    Item ||--o{ Important
+}
+
+@enduml
