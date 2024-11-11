@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "MagicKnightGameMode.h"
-#include "MagicKnightCharacter.h"
+#include "../Player/MagicKnightCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 AMagicKnightGameMode::AMagicKnightGameMode()
