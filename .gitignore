@@ -1,0 +1,10 @@
+/.vs
+/Binaries
+/Config
+/Content
+/DeriverdDataCache
+/Intermediate
+/Saved
+*.vsconfig
+*.sln
+*.uproject
