@@ -1,0 +1,19 @@
+@startuml
+package Ability
+{
+    entity "Ability"
+    {
+        +Id [アビリティのid]
+        ---
+        Name [アビリティ名]
+        AbilityTag [アビリティタグ]
+    }
+    entity "Ability_Enhancement"
+    {
+        +Id [アビリティid]
+        ---
+        MaterialList [(アイテムid,必要数)]
+        EnhancedAbilityId [強化先id]
+    }
+}
+@enduml
