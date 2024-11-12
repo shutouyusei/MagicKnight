@@ -11,7 +11,7 @@ package Equipment
     {
         +Id [装備のid]
         ---
-        Eequipmenttype[装備の種類(Weapon,Head,UpperArmor,BottomArmor,Accessory)]
+        -Eequipmenttype[装備の種類(Weapon,Head,UpperArmor,BottomArmor,Accessory)]
         -Id [種類ごとのid]
     }
     entity "Weapon"

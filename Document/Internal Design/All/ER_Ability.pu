@@ -15,5 +15,6 @@ package Ability
         MaterialList [(アイテムid,必要数)]
         EnhancedAbilityId [強化先id]
     }
+    Ability_Enhancement ||--Ability : AbilityId
 }
 @enduml

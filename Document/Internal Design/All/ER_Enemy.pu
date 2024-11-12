@@ -1,0 +1,18 @@
+@startuml
+package Enemy
+{
+    entity "Enemy"
+    {
+        //どこまで実装できるかは不明
+        // TODO:データベースとして管理できるか検証
+        +Id [敵のid]
+        ---
+        Name [敵の名前]
+        Stats [ステータス]
+        WeekPoint [弱点(頭,腕,胴,脚)]
+        DropItemList [(アイテムid,ドロップ率)]
+        AI  [AIの種類]
+        AbilityList [アビリティid]
+    }
+}
+@enduml
