@@ -1,0 +1,72 @@
+@startuml
+package Equipment
+{
+    entity "Player"
+    {
+        //this is not Database
+        ---
+        EquipmentList [(装備id,所持数)]
+    }
+    entity "Equipment" 
+    {
+        +id [装備のid]
+        ---
+        -equipmenttype[装備の種類(Weapon,Head,UpperArmor,BottomArmor,Accessory)]
+        -id [種類ごとのid]
+    }
+    entity "Weapon"
+    {
+        +id [種類ごとのid]
+        ---
+        name [装備名]
+        stats [ステータス]
+        effect [装備効果]
+    }
+    entity "Head"
+    {
+        +id [種類ごとのid]
+        ---
+        name [装備名]
+        stats [ステータス]
+        effect [装備効果]
+    }
+    entity "UpperArmor"
+    {
+        +id [種類ごとのid]
+        ---
+        name [装備名]
+        stats [ステータス]
+        effect [装備効果]
+    }
+    entity "BottomArmor"
+    {
+        +id [種類ごとのid]
+        ---
+        name [装備名]
+        stats [ステータス]
+        effect[装備効果]
+    }
+    entity "Accessory"
+    {
+        +id [種類ごとのid]
+        ---
+        name [装備名]
+        stats [ステータス]
+        effect [装備効果]
+    }
+    entity "Enhancement"
+    {
+        +id [装備id]
+        ---
+        MaterialList [(素材id,必要数)]
+        -id [強化先装備id]
+    }
+    Player --o{Equipment
+    Equipment ||--o{ Weapon
+    Equipment ||--o{ Head
+    Equipment ||--o{ UpperArmor
+    Equipment ||--o{ BottomArmor
+    Equipment ||--o{ Accessory
+    Equipment -left- Enhancement
+
+@enduml
